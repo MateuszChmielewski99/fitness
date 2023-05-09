@@ -1,0 +1,1 @@
+export { handleGetAllUsers } from "./getAll";
