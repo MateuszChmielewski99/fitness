@@ -10,12 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fitness/server": "workspace:*",
     "@tanstack/react-query": "^4.29.5",
     "@trpc/client": "^10.23.0",
     "@trpc/react-query": "^10.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@fitness/server": "workspace:*"
+    "react-router-dom": "^6.11.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

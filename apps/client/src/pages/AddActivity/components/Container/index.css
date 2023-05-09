@@ -1,0 +1,10 @@
+.snap-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*   height: 100%; */
+    height: calc(100vh - var(--scrollbar-height));
+    min-width: 100vw;
+    scroll-snap-align: start;
+    font-size: 3.rem;
+}

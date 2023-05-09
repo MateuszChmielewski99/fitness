@@ -1,9 +1,12 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
-import { trpc } from "./api/trpc";
-import { Test } from "./Test";
+import { trpc } from "./common/api/trpc";
 import "./App.css";
 import { Suspense } from "react";
+import { LoadingScreen } from "./common/components";
+import { Layout } from "./common/components/Layout";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { AddActivity } from "./pages/AddActivity";
 
 function App() {
   const queryClient = new QueryClient({
@@ -24,9 +27,15 @@ function App() {
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <Test />
-        </Suspense>
+        <BrowserRouter>
+          <Suspense fallback={<LoadingScreen />}>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<AddActivity />} />
+              </Routes>
+            </Layout>
+          </Suspense>
+        </BrowserRouter>
       </QueryClientProvider>
     </trpc.Provider>
   );
