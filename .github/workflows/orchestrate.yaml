@@ -23,5 +23,5 @@ jobs:
 
       - name: Trigger release for affected
         run: | 
-          .github/scripts/dispatch.ps1 -base ${{github.event.pull_request.base.sha}}
+          .github/scripts/dispatch.ps1
         shell: pwsh
