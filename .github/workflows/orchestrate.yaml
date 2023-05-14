@@ -21,6 +21,8 @@ jobs:
       - name: Install deps
         run: pnpm install
 
+      - uses: nrwl/nx-set-shas@v3
+
       - name: Trigger release for affected
         run: | 
           .github/scripts/dispatch.ps1
