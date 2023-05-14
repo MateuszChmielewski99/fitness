@@ -22,4 +22,5 @@ jobs:
         run: pnpm install
 
       - name: Trigger release for affected
-        run: pwsh -File ./scripts/dispatch.ps1
+        run: ./scripts/dispatch.ps1
+        shell: pwsh
