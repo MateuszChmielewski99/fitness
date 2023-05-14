@@ -9,5 +9,5 @@ $nxAffected = pnpm nx print-affected --base=origin/main --select=projects --plai
 $projects = $nxAffected -split ","
 foreach ($project in $projects) {
     Write-Host "Affected project: $project"
-    gh workflow run deploy.yaml -f name=$project
+    gh workflow run deploy.yaml -F name=$project
 }
