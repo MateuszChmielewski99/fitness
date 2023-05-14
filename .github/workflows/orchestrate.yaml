@@ -22,10 +22,14 @@ jobs:
 
       - name: Install deps
         run: pnpm install
-
-      - uses: nrwl/nx-set-shas@v3
+      
+      - name: Setup base and head
+        uses: nrwl/nx-set-shas@v3
+      - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
 
       - name: Trigger release for affected
         run: | 
-          .github/scripts/dispatch.ps1
+          .github/scripts/dispatch.ps1 -base ${{ env.NX_BASE }}" -head ${{ env.NX_HEAD }}"
         shell: pwsh
