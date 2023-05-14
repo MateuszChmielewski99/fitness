@@ -1,11 +1,11 @@
 param (
-    [string] $base,
-    [string] $head
+    [string] $Base,
+    [string] $Head
 )
-Write-Host "base: $base"
-Write-Host "head: $head"
+Write-Host "base: $Base"
+Write-Host "head: $Head"
 
-$nxAffected = pnpm nx print-affected --base=$base --head=$head --select=projects --plain
+$nxAffected = pnpm nx print-affected --base=$Base --head=$Head --select=projects --plain
 $projects = $nxAffected -split ","
 foreach ($project in $projects) {
     Write-Host "Affected project: $project"
