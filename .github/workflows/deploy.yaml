@@ -1,0 +1,35 @@
+name: deploy
+on: 
+    workflow_dispatch:
+        inputs:
+            name:
+              type: string
+              description: project name
+            message:
+              required: true
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+         version: 8.3.1
+
+      - name: Install deps
+        run: pnpm install
+
+      - name: Build
+        run: pnpm nx run ${{ github.event.inputs.name }}:build
+    
