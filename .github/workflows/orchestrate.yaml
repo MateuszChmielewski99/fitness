@@ -33,3 +33,5 @@ jobs:
         run: | 
           .github/scripts/dispatch.ps1 -Base ${{ env.NX_BASE }} -Head ${{ env.NX_HEAD }}
         shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
