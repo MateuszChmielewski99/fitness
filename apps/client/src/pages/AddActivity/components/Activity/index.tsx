@@ -5,6 +5,8 @@ import './index.css'
 export const Activity = () => {
     const { data } = trpc.user.getAll.useQuery();
 
+    console.table(data);
+
     return (
         <Container>
             <h1 className="activity__header">Co</h1>
