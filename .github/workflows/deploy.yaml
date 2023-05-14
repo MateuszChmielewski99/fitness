@@ -27,7 +27,7 @@ jobs:
          version: 8.3.1
 
       - name: Install deps
-        run: pnpm nx run ${{ github.event.inputs.name }}:install
+        run: pnpm nx run install
 
       - name: Build
         run: pnpm nx run ${{ github.event.inputs.name }}:build
