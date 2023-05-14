@@ -2,6 +2,7 @@
 	"name": "@fitness/server",
 	"private": "true",
 	"scripts": {
+		"prebuild": "prisma generate",
 		"build": "npx tsc --build",
 		"start": "node dist/server.js",
 		"dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/src/server.js\"",
