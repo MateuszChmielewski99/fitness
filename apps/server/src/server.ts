@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({origin: "http://localhost:5173"}))
+app.use(cors({origin: process.env.UI_URL}))
 
 app.use("/trpc",
 createExpressMiddleware({
