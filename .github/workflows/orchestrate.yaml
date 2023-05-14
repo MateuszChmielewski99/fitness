@@ -31,5 +31,5 @@ jobs:
 
       - name: Trigger release for affected
         run: | 
-          .github/scripts/dispatch.ps1 -Base ${{ env.NX_BASE }}" -Head ${{ env.NX_HEAD }}"
+          .github/scripts/dispatch.ps1 -Base ${{ env.NX_BASE }} -Head ${{ env.NX_HEAD }}"
         shell: pwsh
