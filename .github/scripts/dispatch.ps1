@@ -3,6 +3,8 @@ param (
     [string] $Head
 )
 
+gh auth login
+
 $nxAffected = pnpm nx print-affected --base=$Base --head=$Head --select=projects --plain
 $projects = $nxAffected -split ","
 foreach ($project in $projects) {
