@@ -1,26 +1,23 @@
 name: orchestrate-release
-on:
-  push:
-    # branches:
-    #   - main
+on: [push]
 jobs:
-  orchestrate: 
+  orchestrate:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16.16.0
-      
+          node-version: 16
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
-      
+
       - name: Install deps
         run: pnpm install
 
       - name: Trigger release for affected
         run: pwsh -File ./scripts/dispatch.ps1
-
