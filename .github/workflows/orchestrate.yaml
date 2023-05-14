@@ -23,5 +23,5 @@ jobs:
 
       - name: Trigger release for affected
         run: | 
-          ./scripts/dispatch.ps1
+          .github/scripts/dispatch.ps1
         shell: pwsh
