@@ -1,6 +1,6 @@
 {
-	"private": "true",
 	"name": "@fitness/server",
+	"private": "true",
 	"scripts": {
 		"build": "npx tsc --build",
 		"start": "node dist/server.js",

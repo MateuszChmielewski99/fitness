@@ -1,0 +1,37 @@
+name: orchestrate-release
+on: [push]
+jobs:
+  orchestrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+         version: 8.3.1
+
+      - name: Install deps
+        run: pnpm install
+      
+      - name: Setup base and head
+        uses: nrwl/nx-set-shas@v3
+      - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
+
+      - name: Trigger release for affected
+        run: | 
+          .github/scripts/dispatch.ps1 -Base ${{ env.NX_BASE }} -Head ${{ env.NX_HEAD }}
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

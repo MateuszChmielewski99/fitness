@@ -5,7 +5,7 @@ import './index.css'
 export const Activity = () => {
     const { data } = trpc.user.getAll.useQuery();
 
-    console.table(data);
+    console.log(data);
 
     return (
         <Container>
