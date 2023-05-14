@@ -14,5 +14,5 @@ $projects = $nxAffected -split ","
 
 foreach ($project in $projects) {
     Write-Host "Affected project: $project"
-    gh workflow run deploy.yaml -F name="$project"
+    gh workflow run deploy.yaml -f name="$project"
 }

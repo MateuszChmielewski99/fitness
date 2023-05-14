@@ -1,6 +1,8 @@
 {
 	"name": "@fitness/server",
 	"private": "true",
+	"version": "0.0.0",
+	"type": "module",
 	"scripts": {
 		"postinstall": "prisma generate",
 		"build": "npx tsc --build",
