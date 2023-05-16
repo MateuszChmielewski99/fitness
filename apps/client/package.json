@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ../../infra/deploy-client.ps1"
+    "deploy": "pwsh ../../infra/deploy-client.ps1 -NoProfile -ExecutionPolicy Unrestricted"
   },
   "dependencies": {
     "@fitness/server": "workspace:*",
