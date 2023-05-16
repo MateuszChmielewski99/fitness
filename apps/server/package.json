@@ -8,7 +8,8 @@
 		"build": "npx tsc --build",
 		"start": "node dist/server.js",
 		"dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/src/server.js\"",
-		"migrate": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./migrations/migrate.ps1"
+		"migrate": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./migrations/migrate.ps1",
+		"deploy": "pwsh ../../infra/deploy-server.ps1 -NoProfile -ExecutionPolicy Unrestricted"
 	},
 	"exports": {
 		".": "./src/index.ts"
