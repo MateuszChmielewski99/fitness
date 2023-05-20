@@ -21,9 +21,10 @@ jobs:
          version: 8.3.1
 
       - name: pnpm install and build
+        working-directory: ./apps/server
         run: |
           pnpm install
-          pnpm nx run @fitness/server:build
+          pnpm build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -51,4 +52,4 @@ jobs:
           app-name: 'fitness-server'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB3E37731C90487D9879EA80FE72217F }}
-          package: "@fitness/server"
+          package: .
