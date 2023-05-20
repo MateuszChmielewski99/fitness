@@ -1,4 +1,4 @@
-name: deploy
+name: deploy fitness client
 permissions:
   contents: read
   pages: write

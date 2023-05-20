@@ -2,14 +2,12 @@
 	"name": "@fitness/server",
 	"private": "true",
 	"version": "0.0.0",
-	"type": "module",
 	"scripts": {
 		"postinstall": "prisma generate",
 		"build": "npx tsc --build",
-		"start": "node dist/server.js",
+		"start": "node dist/src/server.js",
 		"dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/src/server.js\"",
-		"migrate": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./migrations/migrate.ps1",
-		"deploy": "pwsh ../../infra/deploy-server.ps1 -NoProfile -ExecutionPolicy Unrestricted"
+		"migrate": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command ./migrations/migrate.ps1"
 	},
 	"exports": {
 		".": "./src/index.ts"
