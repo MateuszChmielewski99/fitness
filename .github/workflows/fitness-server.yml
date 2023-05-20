@@ -48,6 +48,11 @@ jobs:
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
+        env: # Add environment variables here
+          NODE_VERSION: 12       
+          PRE_BUILD_COMMAND: "npm install -g prisma"   
+          CUSTOM_BUILD_COMMAND: "npm install @prisma/client && npm run build"               
+          POST_BUILD_COMMAND: "npm install @prisma/client"      
         with:
           app-name: 'fitness-server'
           slot-name: 'Production'

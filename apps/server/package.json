@@ -12,14 +12,6 @@
 	"exports": {
 		".": "./src/index.ts"
 	},
-	"build": {
-		"files": [
-		  {
-			"from": "node_modules/.prisma/client/",
-			"to": "node_modules/.prisma/client/"
-		  }
-		]
-	  },
 	"dependencies": {
 		"@prisma/client": "^4.13.0",
 		"@trpc/server": "^10.23.0",
