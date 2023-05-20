@@ -19,7 +19,7 @@ function App() {
   const trpcClient = trpc.createClient({
     links: [
       httpBatchLink({
-        url: "http://localhost:3000/trpc",
+        url: "https://fitness-server.azurewebsites.net/trpc",
       }),
     ],
   });
