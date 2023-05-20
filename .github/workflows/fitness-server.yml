@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,6 +31,7 @@ jobs:
         with:
           app-name: fitness-server
           package: ./apps/server
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB3E37731C90487D9879EA80FE72217F }}
 
   # deploy:
   #   runs-on: ubuntu-latest
