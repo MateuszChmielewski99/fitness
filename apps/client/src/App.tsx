@@ -7,6 +7,11 @@ import { LoadingScreen } from "./common/components";
 import { Layout } from "./common/components/Layout";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { AddActivity } from "./pages/AddActivity";
+//theme
+import "primereact/resources/themes/soho-dark/theme.css";         
+//core
+import "primereact/resources/primereact.min.css";                                       
+        
 
 function App() {
   const queryClient = new QueryClient({

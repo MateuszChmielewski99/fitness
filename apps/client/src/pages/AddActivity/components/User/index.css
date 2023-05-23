@@ -3,4 +3,13 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 4rem;
+}
+
+.user__dropdown {
+  width: 80%;
+}
+
+.user__dropdown > .p-dropdown:not(.p-disabled):hover {
+  border-color: red;
 }
